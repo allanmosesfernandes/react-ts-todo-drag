@@ -3,7 +3,7 @@ import './App.css'
 import InputField from './components/InputField';
 const name: string = 'Allan';
 import type { Todo } from './models'
-import AllToDos from './components/AllToDos';
+import SingleTodo from './components/SingleTodo';
 
 const App = () => {
 
@@ -23,18 +23,30 @@ const App = () => {
     }
   }
 
-  // const handleToggleDone = (id: number) => {
-  //   setTodos((
-  //     todos.map((todo) => {})
-  //   ))
-  // }
+  const handleToggleDone = (id: number) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? {...todo, isDone: !todo.isDone} : todo)
+    )
+  }
 
+  const handleDelete = (id: number) => {
+    setTodos(todos.filter(todo => todo.id !== id))
+  }
+
+  const handleEdit = (id: number, newText: string) => {
+    setTodos(todos.map((todo) =>
+      todo.id === id ? {...todo, todo: newText} : todo
+    ))
+  }
 
   return (
     <>
       <h1>Get shit done! {name}</h1>
       <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd}/>
-      <AllToDos todos={todos} handleToggleDone={handleToggleDone}/>
+      <ul>
+        {todos.map(todo => <SingleTodo key={todo.id} todo={todo} handleToggleDone={handleToggleDone} handleDelete={handleDelete} handleEdit={handleEdit}/>)}
+      </ul>
     </>
   )
 }
