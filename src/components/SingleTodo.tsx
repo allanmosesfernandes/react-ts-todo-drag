@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { Todo } from '../models'
 
 interface Props {
@@ -12,7 +12,9 @@ const SingleTodo = ({ todo, handleToggleDone, handleDelete, handleEdit }: Props)
 
     const [isEditing, setIsEditing] = useState(false)
     const [editedTodoText, setEditedTodoText] = useState(todo.todo);
-
+    useEffect(() => {
+        setEditedTodoText(todo.todo);
+    }, [todo]);
     const handleFormSubmit = (event: React.FormEvent) => {
         event.preventDefault();
         handleEdit(todo.id, editedTodoText);
@@ -32,7 +34,7 @@ const SingleTodo = ({ todo, handleToggleDone, handleDelete, handleEdit }: Props)
                 <button type='submit'>Save</button>
             </form> :
             <li key={todo.id}
-                className={todo.isDone ? 'completed' : ''}>{editedTodoText}
+                className={todo.isDone ? 'completed' : ''}>{todo.todo}
                 <span className="icon" onClick={() => handleToggleDone(todo.id)}>
                     ✅
                 </span>
