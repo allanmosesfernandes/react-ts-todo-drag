@@ -1,31 +1,44 @@
 {
-  "name": "react-ts-todo",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "type-check": "npx tsc --project tsconfig.app.json --noEmit --watch"
-  },
-  "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.30.1",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
-    "@vitejs/plugin-react": "^4.6.0",
-    "eslint": "^9.30.1",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
-    "globals": "^16.3.0",
-    "typescript": "~5.8.3",
-    "typescript-eslint": "^8.35.1",
-    "vite": "^7.0.4",
-    "vite-plugin-checker": "^0.10.2"
-  }
+    "name": "react-ts-todo",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc -b && vite build",
+        "lint": "eslint .",
+        "lint-fix": "npx eslint . --fix",
+        "preview": "vite preview",
+        "type-check": "npx tsc --project tsconfig.app.json --noEmit --watch",
+        "prepare": "husky"
+    },
+    "lint-staged": {
+        "*.{js,ts,tsx}": [
+            "eslint --max-warnings=0",
+            "prettier --check"
+        ]
+    },
+    "dependencies": {
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.32.0",
+        "@types/react": "^19.1.8",
+        "@types/react-dom": "^19.1.6",
+        "@vitejs/plugin-react": "^4.6.0",
+        "eslint": "^9.32.0",
+        "eslint-plugin-react": "^7.37.5",
+        "eslint-plugin-react-hooks": "^5.2.0",
+        "eslint-plugin-react-refresh": "^0.4.20",
+        "eslint-plugin-unused-imports": "^4.1.4",
+        "globals": "^16.3.0",
+        "husky": "^9.1.7",
+        "lint-staged": "^16.1.2",
+        "prettier": "3.6.2",
+        "typescript": "~5.8.3",
+        "typescript-eslint": "^8.38.0",
+        "vite": "^7.0.4",
+        "vite-plugin-checker": "^0.10.2"
+    }
 }
