@@ -8,6 +8,8 @@ const App = () => {
     const [todo, setTodo] = useState<string>('');
             const [todos, setTodos] = useState<Todo[]>([]);
 
+    let uselessVariable = 'taking up space!';
+
     useEffect(() => {
         const todosFromLocalStorage = localStorage.getItem('todos');
         console.log('first')
