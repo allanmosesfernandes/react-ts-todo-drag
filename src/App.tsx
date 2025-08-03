@@ -11,6 +11,7 @@ const App = () => {
     useEffect(() => {
         const todosFromLocalStorage = localStorage.getItem('todos');
         console.log('first')
+        let unusedvar = 'boombastic';
         if (todosFromLocalStorage) {
             setTodos(JSON.parse(todosFromLocalStorage));
         }
