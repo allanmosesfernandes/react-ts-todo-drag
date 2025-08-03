@@ -6,10 +6,11 @@ import SingleTodo from './components/SingleTodo';
 
 const App = () => {
     const [todo, setTodo] = useState<string>('');
-    const [todos, setTodos] = useState<Todo[]>([]);
+            const [todos, setTodos] = useState<Todo[]>([]);
 
     useEffect(() => {
         const todosFromLocalStorage = localStorage.getItem('todos');
+        console.log('first')
         if (todosFromLocalStorage) {
             setTodos(JSON.parse(todosFromLocalStorage));
         }
