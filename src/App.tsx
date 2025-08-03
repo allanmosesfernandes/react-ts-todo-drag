@@ -9,7 +9,7 @@ const App = () => {
     const [todos, setTodos] = useState<Todo[]>([]);
     console.log('ddddd');
     let a = 'Allan';
-    let agds = 'Allan';
+    let agdsd = 'Allan';
 
     useEffect(() => {
         const todosFromLocalStorage = localStorage.getItem('todos');
