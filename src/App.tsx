@@ -10,10 +10,6 @@ const App = () => {
 
     useEffect(() => {
         const todosFromLocalStorage = localStorage.getItem('todos');
-        console.log('first');
-        console.log('second');
-        console.log('second');
-
         if (todosFromLocalStorage) {
             setTodos(JSON.parse(todosFromLocalStorage));
         }
