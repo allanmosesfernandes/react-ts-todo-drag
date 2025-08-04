@@ -9,6 +9,9 @@ const App = () => {
     const [todos, setTodos] = useState<Todo[]>([]);
 
     useEffect(() => {
+        console.log('first');
+        let unusedVariable = 'yabadaba';
+
         const todosFromLocalStorage = localStorage.getItem('todos');
         if (todosFromLocalStorage) {
             setTodos(JSON.parse(todosFromLocalStorage));
