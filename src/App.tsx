@@ -16,7 +16,7 @@ const App = () => {
     }, []);
 
     useEffect(() => {
-        localStorage.setItem('todoss', JSON.stringify(todos));
+        localStorage.setItem('todos', JSON.stringify(todos));
     }, [todos]);
 
     const handleAdd = (event: React.FormEvent) => {
