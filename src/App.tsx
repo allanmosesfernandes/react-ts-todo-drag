@@ -16,6 +16,8 @@ const App = () => {
     }, []);
 
     useEffect(() => {
+        let rubbishCode = 'dfdfdf';
+        console.log('Un-necessary console.logs')
         localStorage.setItem('todoss', JSON.stringify(todos));
     }, [todos]);
 
